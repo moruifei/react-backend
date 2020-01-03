@@ -1,7 +1,7 @@
 import React, { PureComponent, Suspense, lazy } from 'react';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
-const BasicLayout = lazy(() => import('../layout/BasicLayout'));
-const Login = lazy(() => import('../pages/Login'));
+const BasicLayout = lazy(() => import('@/layout/BasicLayout'));
+const Login = lazy(() => import('@/pages/Login'));
 
 class PageRouter extends PureComponent {
     render() {
@@ -9,7 +9,7 @@ class PageRouter extends PureComponent {
             <BrowserRouter>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
-                        <Route exact path='/' render={() => <Redirect to='/app/home' />} />
+                        <Route exact path='/' render={() => <Redirect to='/login' />} />
                         <Route path='/app' component={BasicLayout} />
                         <Route path='/login' component={Login} />
                     </Switch>

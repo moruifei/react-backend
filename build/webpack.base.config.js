@@ -13,7 +13,7 @@ module.exports = {
         publicPath: '/' // 打包后的资源访问前缀
     },
     resolve: {
-        extensions: ['.js', '.json', '.jsx'], // 解析扩展，当找不到文件时会去尝试加载这些后缀继续寻找
+        extensions: ['.js', '.jsx', '.json'], // 解析扩展，当找不到文件时会去尝试加载这些后缀继续寻找
         alias: {
             '@': path.join(__dirname, '..', 'src') // 可为路径配置多个别名儿
         }

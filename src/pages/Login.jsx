@@ -16,7 +16,11 @@ class Login extends PureComponent {
         const { validateFields } = this.props.form;
         validateFields((err, values) => {
             if (!err) {
-                console.log(values);
+                this.setState({btnLoading: true})
+                setTimeout(()=>{
+                    this.props.history.push('/app');
+                    this.setState({btnLoading: false});
+                },3000)
             }
         })
     }
@@ -51,16 +55,16 @@ class Login extends PureComponent {
         </Form>
         return (
             <div className="login-wrapper">
-                <Particles
-                    params={particlesJson}
-                    style={{ position: 'absolute',bottom:'0' }}
-                />
                 <Row type="flex" justify="center" align="middle">
+                    <Particles
+                        params={particlesJson}
+                        style={{ position: 'absolute', left: '0', top: '0', height: '100%' }}
+                    />
                     <Col>
                         <Card
                             hoverable
                             bordered={false}
-                            style={{ width: 300 }}
+                            style={{ width: 300,background:'#FFFAFA' }}
                             cover={<div style={{ padding: '10px' }}><img alt="" src={logo} />{FormInput}</div>}
                         >
                             <Meta title="React Backend System" description="Wonderful Experence!" />
