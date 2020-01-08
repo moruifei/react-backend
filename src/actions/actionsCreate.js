@@ -1,4 +1,4 @@
-import * as types from '@/constspace';
+import * as types from '@/constspace/actionTypes';
 
 export const loadingShow=(loading)=>{
     return {
@@ -18,9 +18,10 @@ export const changeAccessMenu=(data)=>{
         ...data
     }
 }
-export const changeModule=(module)=>{
+export const changeModule=(modules)=>{
+    console.log(modules,'modules')
     return {
         type: types.CHANGE_MODULE,
-        ...module
+        ...modules
     }
 }

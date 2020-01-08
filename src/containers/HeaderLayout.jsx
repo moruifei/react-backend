@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Layout, Icon, Row, Col, Menu } from 'antd';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { changeModule } from '@/actions/actionsCreate';
 import FullScreen from '@/components/FullScreen';
 import logo from '@/assets/images/logo.svg';
 
@@ -10,6 +12,10 @@ const {SubMenu} = Menu;
 class HeaderLayout extends PureComponent {
     state = {
 
+    }
+    componentDidMount(){
+        console.log(this.props,'props')
+        this.props.changeModule({a:'b'})
     }
     logOut=()=>{
         setTimeout(()=>{
@@ -64,4 +70,19 @@ class HeaderLayout extends PureComponent {
         )
     }
 }
-export default withRouter(HeaderLayout);
+const mapStateToProps = (state) =>{
+    console.log(state)
+    return {
+        currentModule: state.app.currentModule,
+        moduleList: state.app.moduleList,
+        accessMenu: state.app.accessMenu
+    }
+}
+const mapDispatchToProps =(dispatch) => {
+    return {
+        changeModule: (modules)=>{
+            dispatch(changeModule(modules))
+        }
+    }
+}
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HeaderLayout))

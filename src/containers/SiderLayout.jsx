@@ -11,7 +11,7 @@ class SiderLayout extends PureComponent {
         const {collapsed} = this.props;
         return (
             <Sider trigger={null} collapsible collapsed={collapsed} className="layout-sider">
-                <div className="layout-logo"><img src={logo} alt='' /><span>react-backend</span></div>
+                <div className="layout-logo"><img src={logo} alt='' /><span style={collapsed?{display:'none'}:{display:'inline-block'}}>react-backend</span></div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                     <Menu.Item key="1">
                         <Icon type="user" />

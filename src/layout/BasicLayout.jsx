@@ -9,6 +9,8 @@ class BasicLayout extends PureComponent {
     state = {
         collapsed: false
     }
+    componentDidMount(){
+    }
     toggle = () => {
         this.setState({ collapsed: !this.state.collapsed });
     }
