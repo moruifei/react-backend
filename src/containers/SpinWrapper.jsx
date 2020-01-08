@@ -10,10 +10,7 @@ class SpinWrapper extends PureComponent {
                 spinning={false}
                 wrapperClassName='spin-loading'
                 indicator={
-                    <div className="loadEffect">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <div className="loading">
                         <span></span>
                         <span></span>
                         <span></span>
