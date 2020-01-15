@@ -15,7 +15,6 @@ class SpinWrapper extends PureComponent {
                         <span></span>
                         <span></span>
                         <span></span>
-                        <span></span>
                     </div>
                 }
             >

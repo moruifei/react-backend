@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { changeModule } from '@/actions/actionsCreate';
 import FullScreen from '@/components/FullScreen';
+import HeaderMenu from '@/components/HeaderMenu';
 import logo from '@/assets/images/logo.svg';
 
 const { Header } = Layout
@@ -11,7 +12,7 @@ const MenuItem = Menu.Item;
 const {SubMenu} = Menu;
 class HeaderLayout extends PureComponent {
     state = {
-
+        
     }
     componentDidMount(){
         console.log(this.props,'props')
@@ -39,7 +40,11 @@ class HeaderLayout extends PureComponent {
                         </ul>
                     </Col>
                     <Col xs={12} sm={12} md={16} lg={16} xl={18} className="layout-flex-col">
-                        这是导航
+                        <HeaderMenu 
+                            moduleList={this.props.moduleList}
+                            changeModule={this.props.changeModule}
+                            currentModule={this.props.currenModule}
+                        />
                     </Col>
                     <Col xs={6} sm={6} md={2} lg={2} xl={1} className="layout-flex-col">
                         <a href="https://github.com/moruifei/react-backend" target="_blank"><Icon type="github" /></a>

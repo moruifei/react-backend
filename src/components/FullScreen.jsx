@@ -59,7 +59,7 @@ class FullScreen extends PureComponent {
     render() {
         const { fullScreen } = this.state;
         return (
-            <Icon style={{marginRight:'0'}} onClick={this.handleFullScreen} type={fullScreen ? 'shrink' : 'arrows-alt'} />
+            <Icon style={{marginRight:'0'}} onClick={this.handleFullScreen} type={fullScreen ? 'fullscreen-exit' : 'fullscreen'} />
         )
     }
 }
