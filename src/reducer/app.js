@@ -28,3 +28,7 @@ export default function (state=initialState, action){
             return state;
     }
 }
+
+export const changeAccessMenu=(data)=>{
+return { type: types.CHANGE_ACCESS_MENU, ...data }
+}
